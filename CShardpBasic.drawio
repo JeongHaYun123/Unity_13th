@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="zIqFEHPBbhOG1Luk2aQ4-5" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zIqFEHPBbhOG1Luk2aQ4-5" value="텍스트 추가 수정" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry y="120" width="240" height="170" as="geometry" />
         </mxCell>
       </root>
