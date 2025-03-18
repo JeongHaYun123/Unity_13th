@@ -4,7 +4,7 @@
  * 설명 : 첫 프로젝트.
  */
 
-using System; //생략가능한 부분(원래는 생략됨)
+using System; //생략가능한 부분(원래는 생략됨) // using 키워드 : 특정 namespace를 현재 파일에 사용하겠다.
 
 namespace FirstProject
 {
@@ -42,6 +42,18 @@ namespace FirstProject
         static char _char1; // 2byte 문자형 (ASCII 코드표에 따른 정수 취급)
         static string _string1; // 문자열형, 문자갯수 * 2byte + 1byte(null byte, 문자열의 끝을 명시)
         static object _object1; // 객체형, C#의 모든 자료형의 기반 타입.
+        static byte _byte1; // 1byte
+
+        // 이름 규칙
+        // PascalCase
+        // camelCase
+        // snake_case
+        // UPPER_SNAKE_CASE
+
+        // 상수 이름 규칙은 공식 문서에서는 보통 PascalCase 권장. 근데 보통 UPPER_SNAKE_CASE 를 사용하여 가독성을 높힘
+        // 정답은 없으나, 프로젝트 시작전에 정해놓고 모두가 그 규칙을 따라서 작성하면됨.
+        const int MAX_CLIENTS = 10; //어퍼스네이크케이스
+        static readonly float MaxHp; //static를 안하면 Main 함수 사용 불가능
 
         /// <summary>
         /// 프로그램 실행시 첫 진입점 함수
@@ -49,11 +61,16 @@ namespace FirstProject
         /// <param name="args"> 프로그램 시작 옵션 </param>
         static void Main(string[] args)
         {
+            _num1 = MAX_CLIENTS;
+            _num1 = 1_000_000;
+            _num7 = MaxHp;
             Console.Write("\'1\'\r");
             Console.Write("2\n");
             Console.WriteLine("Hello\t, World!"); // 출력문, 끝에 줄바꾸기 함
             Console.Write("3");
             Console.WriteLine("{1} {3} {2} {0} {0}", "정하윤", "My", "is", "name"); // 자리표시자
+            Console.WriteLine(@"\'1\'\r"); // Verbatim 문자열 리터럴 (이스케이프시퀀스 무시)
+            Console.WriteLine($"Max clients : {MAX_CLIENTS}"); // 문자열 보간 리터럴 (중괄호로 중간에 데이터 삽입)
         }
     }
 }
