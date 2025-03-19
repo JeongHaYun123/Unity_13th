@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaycastSample", "RaycastSam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicControlStatements", "BasicControlStatements\BasicControlStatements.csproj", "{3FCC4DD6-DF62-4880-BF8C-A14DCE654263}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodSample", "MethodSample\MethodSample.csproj", "{F90CB695-B4EC-4B3E-AD60-A5845540509E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumSample", "EnumSample\EnumSample.csproj", "{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{3FCC4DD6-DF62-4880-BF8C-A14DCE654263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FCC4DD6-DF62-4880-BF8C-A14DCE654263}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FCC4DD6-DF62-4880-BF8C-A14DCE654263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90CB695-B4EC-4B3E-AD60-A5845540509E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90CB695-B4EC-4B3E-AD60-A5845540509E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90CB695-B4EC-4B3E-AD60-A5845540509E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90CB695-B4EC-4B3E-AD60-A5845540509E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
