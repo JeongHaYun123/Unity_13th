@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstProject", "FirstProject\FirstProject.csproj", "{D860D655-C706-476B-91AA-75A5924AC049}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.FirstProject", "FirstProject\1.FirstProject.csproj", "{D860D655-C706-476B-91AA-75A5924AC049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operators", "Operators\Operators.csproj", "{E730F80F-7B64-454B-872D-D3521BB0B236}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Operators", "Operators\2.Operators.csproj", "{E730F80F-7B64-454B-872D-D3521BB0B236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaycastSample", "RaycastSample\RaycastSample.csproj", "{D476D21E-87E1-42AB-B490-572BB33F8EF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.RaycastSample", "RaycastSample\3.RaycastSample.csproj", "{D476D21E-87E1-42AB-B490-572BB33F8EF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicControlStatements", "BasicControlStatements\BasicControlStatements.csproj", "{3FCC4DD6-DF62-4880-BF8C-A14DCE654263}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.BasicControlStatements", "BasicControlStatements\4.BasicControlStatements.csproj", "{3FCC4DD6-DF62-4880-BF8C-A14DCE654263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodSample", "MethodSample\MethodSample.csproj", "{F90CB695-B4EC-4B3E-AD60-A5845540509E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.MethodSample", "MethodSample\5.MethodSample.csproj", "{F90CB695-B4EC-4B3E-AD60-A5845540509E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumSample", "EnumSample\EnumSample.csproj", "{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.EnumSample", "EnumSample\6.EnumSample.csproj", "{E4DFB0F4-83AA-4DB0-8517-15FEB4AF8A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySample", "ArraySample\ArraySample.csproj", "{44CF2C5C-AD72-414E-8405-BE1C1393931C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.ArraySample", "ArraySample\7.ArraySample.csproj", "{44CF2C5C-AD72-414E-8405-BE1C1393931C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.StructureSample", "StructureSample\8.StructureSample.csproj", "{C3583B2A-1D81-49F1-843D-C7A4754ACA72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{44CF2C5C-AD72-414E-8405-BE1C1393931C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44CF2C5C-AD72-414E-8405-BE1C1393931C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44CF2C5C-AD72-414E-8405-BE1C1393931C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3583B2A-1D81-49F1-843D-C7A4754ACA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3583B2A-1D81-49F1-843D-C7A4754ACA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3583B2A-1D81-49F1-843D-C7A4754ACA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3583B2A-1D81-49F1-843D-C7A4754ACA72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
