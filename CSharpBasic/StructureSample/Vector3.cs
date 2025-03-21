@@ -4,6 +4,8 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
+using System.Runtime.CompilerServices;
+
 namespace StructureSample
 {
     // 구조체의 장점은, 값타입으로 빠르게 데이터 그룹을 쓰고 읽는것인데
