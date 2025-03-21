@@ -1,4 +1,6 @@
-﻿namespace StructureSample
+﻿using System.Reflection.Metadata;
+
+namespace StructureSample
 {
     // 아래 과제가 어려울것 같다 싶으신분들은 Vector2 구조체 먼저 만들어보고 이후에 과제 수행 해주세요.
 
@@ -105,7 +107,7 @@
 
         public float blue { get { return _blue1; } }
 
-        public int option {  get; private set; }
+        public int option {  get;  set; }
 
 
         float _red1, _green1, _blue1;
@@ -125,9 +127,12 @@
             return true;
         }
 
-        public float Magnitude => (float)Math.Sqrt(_red1 * _red1 + _green1 * _green1 + _blue1 * _blue1);
+        // public float Magnitude => (float)Math.Sqrt(_red1 * _red1 + _green1 * _green1 + _blue1 * _blue1);
 
-        public Color Normalized => new Color(_red1, _green1, _blue1) / Magnitude;
+        //public Color Normalized => new Color(_red1, _green1, _blue1) / Magnitude;
+
+        public Color Normalized => new Color(_red1, _green1, _blue1) / 255.0f;
+
 
 
         // 비교 연산자

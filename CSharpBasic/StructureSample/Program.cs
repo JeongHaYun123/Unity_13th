@@ -50,11 +50,16 @@
 
             Color target2Color = new Color(r2, g2, b2);
 
+            Color target3Color = new Color(0, 0, 0);
+            Color target4Color = new Color(0, 0, 0);
+
             int active = 1;
             int noramloption = 0;
             int menu = 1;
             int menu2 = 1;
             int menu3 = 1;
+            int menu4 = 1;
+            float number = 1;
 
             while (active == 1)
             {
@@ -118,13 +123,175 @@
                             Console.WriteLine("1 : 비교 연산, 2 : 덧셈 연산, 3 : 뺄셈 연산");
                             Console.Write("원하는 메뉴를 입력해 주세요 : ");
                             menu3 = int.Parse(Console.ReadLine());
+                            switch (menu3)
+                            {
+                                case 1:
+                                    Console.Clear();
+                                    if(target1Color == target2Color)
+                                    {
+                                        Console.WriteLine("두 RGB의 값은 같습니다");
+                                        Thread.Sleep(5000);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("두 RGB의 값은 다릅니다");
+                                        Thread.Sleep(5000);
+                                    }
+                                        break;
+                                case 2:
+                                    Console.Clear();
+                                    target3Color = target1Color + target2Color;
+                                    Console.WriteLine($"두 RGB의 합은 {target3Color.red}, {target3Color.green}, {target3Color.blue} 입니다.");
+                                    Console.WriteLine("1 : 첫 번째 RGB에 저장, 2 : 두 번째 RGB에 저장, 3 : 두 개의 RGB에 저장, 4 : 취소");
+                                    Console.Write("원하는 메뉴를 입력해 주세요 : ");
+                                    menu4 = int.Parse(Console.ReadLine());
+                                    if(menu4 == 1)
+                                    {
+                                        target1Color = target3Color;
+                                    }
+                                    else if(menu4 == 2)
+                                    {
+                                        target2Color = target3Color;
+                                    }
+                                    else if(menu4 == 3)
+                                    {
+                                        target1Color = target3Color;
+                                        target2Color = target3Color;
+                                    }
+                                    else if(menu4 == 4)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("잘못된 값을 입력하셨습니다.");
+                                        Thread.Sleep(2000);
+                                    }
+
+                                        break;
+                                case 3:
+                                    Console.Clear();
+                                    target3Color = target1Color - target2Color;
+                                    Console.WriteLine($"두 RGB의 뺼셈은 {target3Color.red}, {target3Color.green}, {target3Color.blue} 입니다.");
+                                    Console.WriteLine("1 : 첫 번째 RGB에 저장, 2 : 두 번째 RGB에 저장, 3 : 두 개의 RGB에 저장, 4 : 취소");
+                                    Console.Write("원하는 메뉴를 입력해 주세요 : ");
+                                    menu4 = int.Parse(Console.ReadLine());
+                                    if (menu4 == 1)
+                                    {
+                                        target1Color = target3Color;
+                                    }
+                                    else if (menu4 == 2)
+                                    {
+                                        target2Color = target3Color;
+                                    }
+                                    else if (menu4 == 3)
+                                    {
+                                        target1Color = target3Color;
+                                        target2Color = target3Color;
+                                    }
+                                    else if (menu4 == 4)
+                                    {
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("잘못된 값을 입력하셨습니다.");
+                                        Thread.Sleep(2000);
+                                    }
+
+                                    break;
+                            }
                         }
                         else if(menu2 == 2)
                         {
                             Console.Clear();
-                            Console.WriteLine("1 : 첫 번째 RGB, 2 : 두 번째 RGB");
-                            Console.Write("원하는 메뉴를 입력해 주세요 :");
+                            Console.Write("실수를 입력해 주세요 : ");
+                            number = float.Parse(Console.ReadLine());
+                            Console.WriteLine("1 : 나눗셈, 2 : 곱셈, 3 : 취소");
+                            Console.Write("원하는 메뉴를 입력해주세요 : ");
                             menu3 = int.Parse(Console.ReadLine());
+                            if(menu3 == 1)
+                            {
+                                Console.Clear();
+                                target3Color = target1Color / number;
+                                target4Color = target2Color / number;
+                                Console.WriteLine($"{number}을 나눈 RGB 값입니다");
+                                Console.WriteLine($"첫 번째 RGB : {target3Color.red}, {target3Color.green}, {target3Color.blue}");
+                                Console.WriteLine($"두 번째 RGB : {target4Color.red}, {target4Color.green}, {target4Color.blue}");
+                                Console.WriteLine("1 : 첫 번째 RGB에 저장, 2 : 두 번째 RGB에 저장, 3 : 두 개의 RGB에 저장, 4 : 취소");
+                                Console.Write("원하는 메뉴를 입력해주세요 : ");
+                                menu4 = int.Parse(Console.ReadLine());
+                                switch(menu4)
+                                {
+                                    case 1:
+                                        target1Color = target3Color;
+                                        Console.WriteLine("첫 번째 RGB에 저장이 완료되었습니다.");
+                                        Thread.Sleep(5000);
+                                        break;
+                                    case 2:
+                                        target2Color = target4Color;
+                                        Console.WriteLine("두 번째 RGB에 저장이 완료되었습니다.");
+                                        Thread.Sleep(5000);
+                                        break;
+                                    case 3:
+                                        target1Color = target3Color;
+                                        target2Color = target4Color;
+                                        Console.WriteLine("두 개의 RGB에 저장이 완료되었습니다.");
+                                        Thread.Sleep(5000);
+                                        break;
+                                    case 4:
+                                        break;
+                                    default:
+                                        Console.WriteLine("잘못된 값을 입력하셨습니다.");
+                                        Thread.Sleep(2000);
+                                        break;
+                                }
+                            }
+                            else if(menu3 == 2)
+                            {
+                                Console.Clear();
+                                target3Color = target1Color * number;
+                                target4Color = target2Color * number;
+                                Console.WriteLine($"{number}을 곱한 RGB 값입니다");
+                                Console.WriteLine($"첫 번째 RGB : {target3Color.red}, {target3Color.green}, {target3Color.blue}");
+                                Console.WriteLine($"두 번째 RGB : {target4Color.red}, {target4Color.green}, {target4Color.blue}");
+                                Console.WriteLine("1 : 첫 번째 RGB에 저장, 2 : 두 번째 RGB에 저장, 3 : 두 개의 RGB에 저장, 4 : 취소");
+                                Console.Write("원하는 메뉴를 입력해주세요 : ");
+                                menu4 = int.Parse(Console.ReadLine());
+                                switch (menu4)
+                                {
+                                    case 1:
+                                        target1Color = target3Color;
+                                        Console.WriteLine("첫 번째 RGB에 저장이 완료되었습니다.");
+                                        Thread.Sleep(5000);
+                                        break;
+                                    case 2:
+                                        target2Color = target4Color;
+                                        Console.WriteLine("두 번째 RGB에 저장이 완료되었습니다.");
+                                        Thread.Sleep(5000);
+                                        break;
+                                    case 3:
+                                        target1Color = target3Color;
+                                        target2Color = target4Color;
+                                        Console.WriteLine("두 개의 RGB에 저장이 완료되었습니다.");
+                                        Thread.Sleep(5000);
+                                        break;
+                                    case 4:
+                                        break;
+                                    default:
+                                        Console.WriteLine("잘못된 값을 입력하셨습니다.");
+                                        Thread.Sleep(2000);
+                                        break;
+                                }
+                            }
+                            else if(menu3 == 3)
+                            {
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("잘못된 값을 입력하셨습니다.");
+                                Thread.Sleep(2000);
+                            }  
                         }
                         else
                         {
