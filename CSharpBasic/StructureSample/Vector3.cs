@@ -18,6 +18,8 @@ namespace StructureSample
         // protected - 상속자만 접근 가능
         // private   - 외부 접근 불가능
 
+        // 구조체 생성자
+        // 구조체를 처음 초기화할 때 호출할 함수 (얘도 함수이기때문에 오버로드 가능함)
         // 구조체는 기본적으로 내부 데이터를 보호하는 컨셉이기때문에 접근제한자를 명시하지 않으면 private 임.
         public Vector3(float x, float y, float z) //안쓰면 private 있는 거랑 다를 게 없다, FM으로 하면 internal이 맞다 ( 다른 곳에 사용할 일이 없기 때문에)
         {
@@ -159,6 +161,12 @@ namespace StructureSample
         }
 
         // 연산자 오버로딩
+        public static Vector3 operator +(Vector3 op1, Vector3 op2)
+            => new Vector3(op1._x + op2._x, op1._y + op2._y, op1._z + op2._z);
+
+        public static Vector3 operator -(Vector3 op1, Vector3 op2)
+            => new Vector3(op1._x - op2._x, op1._y - op2._y, op1._z - op2._z);
+
         public static Vector3 operator /(Vector3 op1, float op2)
             => new Vector3(op1._x / op2, op1._y / op2, op1._z / op2);
 

@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Vector3 velocity = new Vector3(3, 5, 2);
+            int a = 3; // 그냥 값타임 변수는 리터럴상수나 다른 변수 대입해서 초기화 하면 됨.
+            Vector3 velocity = new Vector3(3, 5, 2); // 구조체 변수는 구조체 생성자를 통해서 초기화 로직을 수행해야함.(다른 구조체 변수 대입도 됨)
             velocity.SetX(velocity.GetX() + 1f);
             //position.MoveX(1f);
             velocity.X += 1;
@@ -18,6 +19,9 @@
 
             Vector3 target1Position = new Vector3(5f, 2f, 3.2f);
             Vector3 target2Position = new Vector3(-5f, 3.4f, 1.2f);
+            target1Position = target2Position;
+            target1Position += Vector3.Forward;
+            target1Position += new Vector3(0f, 0f, 1f);
 
             if (target1Position.X == target2Position.X)
             {
@@ -25,6 +29,11 @@
             }
 
             Console.WriteLine($"distance : {Vector3.Distance(target1Position, target2Position)}"); //두 점? 사이 거리
+
+            // 3/24 Vector3Extensions.cs
+            //확장 함수
+            target1Position.Dot(target2Position); // 앞에 this를 붙였기에 사용 가능
+            float dot = Vector3Extensions.Dot(target1Position, target2Position);
 
 
             // Color

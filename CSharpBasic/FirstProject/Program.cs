@@ -19,6 +19,9 @@ namespace FirstProject
         // 런타임 중에 동적으로 할당 할 수 없다.
         // 변수를 선언할때는 얼마만큼의 메모리공간을 어떤 형태로 할당해서 사용할 것인지 명시를 해줘야 CPU 가 연산할 수 있다.
 
+        // static 멤버는 Data//BSS 영역의 데이터를 활용하는 멤버
+        // instance 멤버는 Heap/Stack 영역에 새로 할당된 데이터를 활용하는 멤버
+
         // 352 = 10^2 * 3 + 10^1 * 5 + 10^0 +(*가 맞을 듯?) 2 = 352_10
         // 4 = 2^2 * 1 + 2^1 * 0 + 2^0 * 0 = 100_2 = 00000100_2
         // 3 =           2^1 * 1 + 2^0 * 1 = 011_2 = 00000011_2
@@ -44,11 +47,12 @@ namespace FirstProject
         static object _object1; // 객체형, C#의 모든 자료형의 기반 타입.
         static byte _byte1; // 1byte
 
-        // 이름 규칙
-        // PascalCase
-        // camelCase
-        // snake_case
-        // UPPER_SNAKE_CASE
+        // 이름 규칙 //3/24 설명 추가 //이름 왠만하면 이런 형태로
+        // PascalCase : 사용자정의자료형 이름, 프로퍼티 이름, 함수 이름, private 하지 않은 멤버변수, Namespace 이름
+        // camelCase : 지역변수, 매개변수, private 한 멤버변수는 _camelCase
+        // snake_case : 상수
+        // UPPER_SNAKE_CASE : 상수
+        // 줄임말 쓰지 말것. 작명은 귀찮고 길어지더라도 의미가 명확한것이 좋다.
 
         // 상수 이름 규칙은 공식 문서에서는 보통 PascalCase 권장. 근데 보통 UPPER_SNAKE_CASE 를 사용하여 가독성을 높힘
         // 정답은 없으나, 프로젝트 시작전에 정해놓고 모두가 그 규칙을 따라서 작성하면됨.
