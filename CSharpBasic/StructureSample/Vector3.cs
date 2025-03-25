@@ -52,8 +52,14 @@ namespace StructureSample
 
         public static Vector3 One => new Vector3(1f, 1f, 1f);
 
+        /// <summary>
+        /// 벡터의 크기 (원점으로부터의 거리)
+        /// </summary>
         public float Magnitude => (float)Math.Sqrt(_x * _x + _y * _y + _z * _z); //길이라고 해야 하나?
 
+        /// <summary>
+        /// 정규화된 벡터 (크기를 1로)
+        /// </summary>
         public Vector3 Normalized => new Vector3(_x, _y, _z) / Magnitude; //정규화, 연산자 오버로딩으로 에러가 나지 않음
 
         // 프로퍼티

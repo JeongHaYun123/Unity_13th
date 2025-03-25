@@ -1,4 +1,9 @@
-﻿namespace StructureSample
+﻿/*
+ * 구조체 :
+ * 빠르게 읽고 쓰기위한 간단한 데이터들의 집합과, 그 데이터들에 대한 연산 및 편의 기능을 구현하기위한 사용자정의자료형
+ */
+
+namespace StructureSample
 {
     internal class Program
     {
