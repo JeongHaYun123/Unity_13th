@@ -6,33 +6,58 @@ using System.Threading.Tasks;
 
 namespace ClassSample
 {
-    class Pigeon
+    class Pigeon : Bird
     {
-        public Pigeon(String name)
+        //public Pigeon(String name)
+        //{
+        //    _name = name;
+        //}
+
+        //public Pigeon()
+        //{
+
+        //}
+
+
+        //public int AverageLifespan => _averageLifespan; //get 접근자
+        //public string Name => _name;
+
+        //int _averageLifespan;
+        //string _name;
+
+        //public void Fly()
+        //{
+        //    Console.WriteLine($"{this._name}(비둘기), 날다");
+        //}
+
+        //public void Walk()
+        //{
+        //    Console.WriteLine($"{this._name}(비둘기), 걷다");
+        //}
+
+        public Pigeon(string name) : base(name)
         {
-            _name = name;
         }
 
-        public Pigeon()
-        {
+        public override int AverageLifespan => 15;
 
+        private string _feature = "평화의 상징";
+
+        public override void Fly()
+        {
+            Console.WriteLine($"{_name}(비둘기), 날다");
         }
 
-
-        public int AverageLifespan => _averageLifespan; //get 접근자
-        public string Name => _name;
-
-        int _averageLifespan;
-        string _name;
-
-        public void Fly()
+        public override void Walk()
         {
-            Console.WriteLine("비둘기, 날다");
+            Console.WriteLine($"{_name}(비둘기), 걷다");
         }
 
-        public void Walk()
+        public override void PrintName()
         {
-            Console.WriteLine("비둘기, 걷다");
+            base.PrintName();
+
+            Console.WriteLine("구구구...");
         }
     }
 }
