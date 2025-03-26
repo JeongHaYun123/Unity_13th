@@ -7,75 +7,90 @@ using System.Threading.Tasks;
 
 namespace PracticeOOP
 {
-    abstract class PC : Character
+    abstract class PC : Character, IAttacker
     {
-        //public CharacterClass CurrentClass { get; private set; }
-
-        //public virtual void Attack();
-
-
-        public PC(string name, string CharacterClass) : base(name, CharacterClass)
+        // base 생성자 오버로드가 파라미터를 가진다면, 자식클래스는 생성자 오버로드를 정의하여 base 생성자의 파라미터에 인수를 전달하여야 한다.
+        protected PC(string name, int hpMax, int attackForce)
+            : base(name, hpMax)
         {
-        }
-
-        public string currentClass
-        {
-            get { return CharacterClass; }
-            private set { CharacterClass = value; }
-        }
-
-        public virtual void Smash()
-        {
-
-        }
-        public virtual void Fireball()
-        {
-
+            AttackForce = attackForce;
         }
 
 
-        public void Attack()
+        public CharacterClass CurrentClass { get; private set; }
+
+        public int AttackForce { get; private set; }
+
+
+        public void Attack(IDamageable target)
         {
-            if (currentClass == "Warrior")
-            {
-                Console.WriteLine("Warrior Attack");
-                Smash();
-            }
-            else if (currentClass == "Magician")
-            {
-                Console.WriteLine("Magician Attack");
-                Fireball();
-            }
-            else
-            {
-                Console.WriteLine($"{currentClass}이다");
-            }
+            target.Damage(this, AttackForce);
         }
 
-    }
 
-    class Warrior : PC
-    {
-        public Warrior(string name, string CharacterClass) : base(name, CharacterClass)
-        {
-        }
 
-        public override void Smash()
-        {
-            Console.WriteLine("Smash");
+        /* public PC(string name, string CharacterClass) : base(name, CharacterClass)
+         {
+         }
 
-        }
-    }
+         public string currentClass
+         {
+             get { return CharacterClass; }
+             private set { CharacterClass = value; }
+         }
 
-    class Magician : PC
-    {
-        public Magician(string name, string CharacterClass) : base(name, CharacterClass)
-        {
-        }
+         public virtual void Smash()
+         {
 
-        public override void Fireball()
-        {
-            Console.WriteLine("Fireball");
-        }
+         }
+         public virtual void Fireball()
+         {
+
+         }
+
+
+         public void Attack()
+         {
+             if (currentClass == "Warrior")
+             {
+                 Console.WriteLine("Warrior Attack");
+                 Smash();
+             }
+             else if (currentClass == "Magician")
+             {
+                 Console.WriteLine("Magician Attack");
+                 Fireball();
+             }
+             else
+             {
+                 Console.WriteLine($"{currentClass}이다");
+             }
+         }
+
+     }
+
+     class Warrior : PC
+     {
+         public Warrior(string name, string CharacterClass) : base(name, CharacterClass)
+         {
+         }
+
+         public override void Smash()
+         {
+             Console.WriteLine("Smash");
+
+         }
+     }
+
+     class Magician : PC
+     {
+         public Magician(string name, string CharacterClass) : base(name, CharacterClass)
+         {
+         }
+
+         public override void Fireball()
+         {
+             Console.WriteLine("Fireball");
+         }*/
     }
 }

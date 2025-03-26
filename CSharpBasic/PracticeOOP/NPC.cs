@@ -7,7 +7,13 @@ using Microsoft.VisualBasic;
 
 namespace PracticeOOP
 {
-    abstract class NPC
+    abstract class NPC : Character
+    {
+        protected NPC(string name, int hpMax) : base(name, hpMax)
+        {
+        }
+    }
+    /*abstract class NPC
     {
     }
 
@@ -52,5 +58,5 @@ namespace PracticeOOP
             Console.WriteLine("take damage 10");
             player.Hp -= 10;
         }
-    }
+    }*/
 }

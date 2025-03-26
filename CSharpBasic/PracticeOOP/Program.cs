@@ -4,7 +4,16 @@ namespace PracticeOOP
 {
     internal class Program
     {
-        enum CharacterClass
+        static void Main(string[] args)
+        {
+            GamePlayManager gamePlayerManger = new GamePlayManager();
+
+            Console.WriteLine("Press any key to start the game ...");
+            Console.ReadKey();
+            Console.Clear();
+            gamePlayerManger.PlayGame();
+        }
+       /* enum CharacterClass
         {
             Nothing,
             Warrior,
@@ -48,6 +57,6 @@ namespace PracticeOOP
                 enemy.Attack(player);
                 Console.WriteLine(player.Hp);
             }
-        }
+        }*/
     }
 }

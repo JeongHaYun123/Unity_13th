@@ -6,14 +6,30 @@ using System.Threading.Tasks;
 
 namespace PracticeOOP
 {
-    abstract class Character
+    abstract class Character : GameObject, IDamageable
     {
-         //public string Name { get; private set; }
-         //public int HpMax { get; } 
-         //public int Hp { get; private set; }
+        public Character(string name, int hpMax)
+        {
+            Name = name;
+            HpMax = hpMax;
+            Hp = hpMax;
+        }
+
+        public string Name { get; private set; }
+
+        public int HpMax { get; private set; }
+
+        public int Hp { get; protected set; }
+
+        public virtual void Damage(IAttacker attacker, int amount)
+        {
+            Hp -= amount;
+        }
 
 
-        public Character(string name, string CharacterClass)
+
+
+        /*public Character(string name, string CharacterClass)
         {
             _name = name;
             _characterClass = CharacterClass;
@@ -58,7 +74,7 @@ namespace PracticeOOP
         {
             get { return _hp; }
             set { _hp = value; }
-        }
+        }*/
 
     }
 }

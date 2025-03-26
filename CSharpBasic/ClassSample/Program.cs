@@ -60,8 +60,23 @@ namespace ClassSample
                 bird.PrintName();
             }
 
+            pigeon = (Pigeon)obj; //이런 상황을 더 지향해야 한다.
+
             // as 키워드 : 왼쪽 피연산자를 오른쪽 피연산 타입으로 형변환 시도후, 형변환 성공시 변환된 타입 참조반환, 실패시 null 반환
             pigeon = obj as Pigeon;
+
+            // null 체크는 최대한 지양하는것이 좋은 코드 스타일이다.
+            if (pigeon != null)
+            {
+
+            }
+
+            int a = 3;
+
+            if (a == 3)
+            {
+
+            }
         }
     }
 }
