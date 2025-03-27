@@ -25,6 +25,7 @@ namespace PracticeOOP
 
         public static Coord operator +(Coord op1, Coord op2)
             => new Coord(op1.X + op2.X, op1.Y + op2.Y);
+
         public static Coord operator -(Coord op1, Coord op2)
             => new Coord(op1.X - op2.X, op1.Y - op2.Y);
     }

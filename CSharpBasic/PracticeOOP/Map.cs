@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PracticeOOP.Utilities;
 
 namespace PracticeOOP
 {
@@ -13,7 +15,55 @@ namespace PracticeOOP
             _tiles = new MapTile[height, width];
         }
 
-        public MapTile[,] tiles => _tiles;
+        public MapTile this[int x, int y]
+        {
+            get
+            {
+                return _tiles[y, x];
+            }
+            set
+            {
+                _tiles[y, x] = value;
+            }
+        }
+
+        public MapTile this[Coord coord]
+        {
+            get
+            {
+                return _tiles[coord.Y, coord.X];
+            }
+            set
+            {
+                _tiles[coord.Y, coord.X] = value;
+            }
+        }
+
+        //public MapTile[,] tiles => _tiles;
+        /* public MapTile this[int y, int x]
+         {
+             get
+             {
+                 return _tiles[y, x];
+             }
+             set
+             {
+                 _tiles[y, x] = value;
+             }
+         }
+
+         public MapTile this[Coord coord]
+         {
+             get
+             {
+                 return _tiles[coord.Y, coord.X];
+             }
+             set
+             {
+                 _tiles[coord.Y, coord.X] = value;
+             }
+         }*/
+
         MapTile[,] _tiles;
 
         public static Map CreateDefault(int width, int height)
@@ -31,6 +81,17 @@ namespace PracticeOOP
             }
 
             return map;
+        }
+
+        public void SetTile(MapTile mapTile)
+        {
+            Coord coord = mapTile.Coord;
+            _tiles[coord.Y, coord.X] = mapTile;
+        }
+
+        public MapTile GetTile(Coord coord)
+        {
+            return _tiles[coord.Y, coord.X];
         }
 
         public bool TryGetEmptyRandomMapTile(out MapTile mapTile)
@@ -58,11 +119,76 @@ namespace PracticeOOP
 
             _tiles[y, x].GameObject = gameObject;
             return true;
+
+            /*if (!isEmpty(coord.X, coord.Y))
+                return false;
+
+            _tiles[Coord.Y, Coord.X].GameObject = GameObject;
+            return true;*/
         }
 
         public bool isEmpty(int x, int y)
         {
             return _tiles[y, x].GameObject == null;
+        }
+
+        public bool isEmpty(Coord coord)
+        {
+            return _tiles[coord.Y, coord.X].GameObject == null;
+        }
+
+        /// <summary>
+        /// x ,y 좌표가 맵의 경계 내에 존재하는  유효한 좌표인지 확인
+        /// </summary>
+        /// <returns> true : 유효함 , false : 유효하지 않음</returns>
+        public bool IsValid(int x, int y)
+        {
+            if (isEmpty(x, y))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsValid(Coord coord)
+        {
+            if(isEmpty(coord.X, coord.Y)) { return true; }
+            
+            return false;
+        }
+
+        /// <summary>
+        /// 비어있는 타일의 좌표들을 랜덤하게 섞은 배열을 가져옴
+        /// </summary>
+        /// <returns></returns>
+        public Coord[] GetShuffledEmptyCoords()
+        {
+            Coord[] buffer = new Coord[_tiles.Length];
+            int bufferIndex = 0;
+
+            for (int i = 0; i < _tiles.GetLength(0); i++)
+            {
+                for (int j = 0; j < _tiles.GetLength(1); j++)
+                {
+                    if (isEmpty(j, i))
+                    {
+                        buffer[bufferIndex] = _tiles[i, j].Coord; //new Coord(i, j);
+                        bufferIndex++;
+                    }
+                }
+           }
+
+            Coord[] emptyCoords = new Coord[bufferIndex];
+            Array.Copy(buffer, 0, emptyCoords, 0, bufferIndex);
+
+            //for (int i = 0; i < bufferIndex; i++)
+            //    emptyCoords[i] = buffer[i];
+
+            Random random = new Random();
+            random.Shuffle(emptyCoords);
+
+            return emptyCoords;
         }
 
         public void Display()
@@ -91,11 +217,14 @@ namespace PracticeOOP
 
                     if (_tiles[i, j].GameObject == null)
                     {
-                        Console.Write("   ");
+                        Console.Write("  ");
                     }
                     else
                     {
                         // TODO : GameObject 의 문자 출력
+                        GameObject gameObject = _tiles[i, j].GameObject;
+                        Console.ForegroundColor = gameObject.SymbolColor;
+                        Console.Write($"{gameObject.Symbol}");
                     }
                 }
 
