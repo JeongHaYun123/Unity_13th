@@ -7,19 +7,30 @@ using System.Threading.Tasks;
 
 namespace PracticeOOP
 {
+    /// <summary>
+    /// 게임 시작과 로직 관리
+    /// </summary>
     class GamePlayManager
     {
-        private Map _map;
-        private PC _player;
+        private Map _map; // 현재 플레이하려는 레벨의 맵
+        private PC _player; // 현재 조작하려는 플레이어의 캐릭
+        //private Coord _playerCoord // <= 플레이어 좌표 저장해놓고 활용해도됨
         private MapTile _playerTile;
         private MapTile _nullTile;
 
+        /// <summary>
+        /// 게임 첫 시작시 호출
+        /// 게임 로직 시작 전 레벨 초기화 진행함
+        /// </summary>
         public void PlayGame()
         {
             initializeLevel();
             GameWorkflow();
         }
 
+        /// <summary>
+        /// 맵 만들고 맵에 게임오브젝트들 배치
+        /// </summary>
         private void initializeLevel()
         {
             CreateMap();
@@ -33,10 +44,10 @@ namespace PracticeOOP
 
         private void SpawnGameObjects()
         {
-            MapTile mapTile;
-            GameObject spawnedObject;
-            Coord[] coords = _map.GetShuffledEmptyCoords();
-            int coordIndex = 0;
+            MapTile mapTile; // 게임 오브젝트 배치하려는 타일값을 처리하기위한 변수
+            GameObject spawnedObject; // 생성한 게임 오브젝트를 처리하기위한 변수
+            Coord[] coords = _map.GetShuffledEmptyCoords(); //맵 전체에서 게임오브젝트가 존재하지않는 타일들을 랜덤하게 섞어서 받아옴
+            int coordIndex = 0; // 순차적으로 빈 타일을 검색하기위한 인덱스 (Iteration)
 
             // 이장님 소환 및 배치
             spawnedObject = new TownNPC_VillageChief("마을이장", int.MaxValue);
@@ -98,6 +109,7 @@ namespace PracticeOOP
             //_map.SetTile(mapTile);
             _map.SetTile(_playerTile);
             coordIndex++;            
+            //_playerCoord = mapTaile.Coord;
         }
 
 
@@ -171,6 +183,43 @@ namespace PracticeOOP
             }
 
             _map.SetTile(_playerTile);
+
+
+            /*Coord direction = default;
+
+            switch (key)
+            {
+                case ConsoleKey.UpArrow:
+                    direction = Coord.Up;
+                    break;
+                case ConsoleKey.DownArrow:
+                    direction = Coord.Down;
+                    break;
+                case ConsoleKey.RightArrow:
+                    direction = Coord.Right;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    direction = Coord.Left;
+                    break;
+                default:
+                    break;
+            }
+
+            Coord targetCoord = _playerCoord + direction;
+
+            if (_map.IsValid(targetCoord) &&
+                _map.IsEmpty(targetCoord))
+            {
+                MapTile origin = _map.GetTile(_playerCoord);
+                origin.GameObject = null;
+                _map.SetTile(origin);
+
+                MapTile target = _map.GetTile(targetCoord);
+                target.GameObject = _player;
+                _map.SetTile(target);
+
+                _playerCoord = targetCoord;
+            }*/
 
         }
     }

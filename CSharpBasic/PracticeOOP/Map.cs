@@ -114,7 +114,7 @@ namespace PracticeOOP
 
         public bool TrySetGameObject(int x, int y, GameObject gameObject)
         {
-            if (!isEmpty(x, y))
+            if (!IsEmpty(x, y))
                 return false;
 
             _tiles[y, x].GameObject = gameObject;
@@ -127,12 +127,12 @@ namespace PracticeOOP
             return true;*/
         }
 
-        public bool isEmpty(int x, int y)
+        public bool IsEmpty(int x, int y)
         {
             return _tiles[y, x].GameObject == null;
         }
 
-        public bool isEmpty(Coord coord)
+        public bool IsEmpty(Coord coord)
         {
             return _tiles[coord.Y, coord.X].GameObject == null;
         }
@@ -143,7 +143,7 @@ namespace PracticeOOP
         /// <returns> true : 유효함 , false : 유효하지 않음</returns>
         public bool IsValid(int x, int y)
         {
-            if (isEmpty(x, y))
+            if (IsEmpty(x, y))
             {
                 return true;
             }
@@ -153,10 +153,37 @@ namespace PracticeOOP
 
         public bool IsValid(Coord coord)
         {
-            if(isEmpty(coord.X, coord.Y)) { return true; }
+            if(IsEmpty(coord.X, coord.Y)) { return true; }
             
             return false;
         }
+
+        /*
+        public bool IsValid(int x, int y)
+        {
+            // x 나 y 가 2차원 배열 인데스 범위를 벗어날때
+            if ( x >= 0 &&
+                 x < _tiles.GetLength(1) &&
+                 y >= 0
+                 && y < _tiles.GetLength(0))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsValid(Coord coord)
+        {
+            if ( coord.X >= 0 && coord.X < _tiles.GetLength(1) &&
+                 coord.Y >= 0 && coord.Y < _tiles.GetLength(0))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        */
 
         /// <summary>
         /// 비어있는 타일의 좌표들을 랜덤하게 섞은 배열을 가져옴
@@ -171,7 +198,7 @@ namespace PracticeOOP
             {
                 for (int j = 0; j < _tiles.GetLength(1); j++)
                 {
-                    if (isEmpty(j, i))
+                    if (IsEmpty(j, i))
                     {
                         buffer[bufferIndex] = _tiles[i, j].Coord; //new Coord(i, j);
                         bufferIndex++;

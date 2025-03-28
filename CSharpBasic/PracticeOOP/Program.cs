@@ -6,6 +6,13 @@ namespace PracticeOOP
     {
         static void Main(string[] args)
         {
+            int a = 1;
+            object obj = (object)1; // Boxing
+            object obj2 = new object();
+            obj2 = 1; //obj2 == obj 같다(구문이)
+            a = (int)obj; // Unboxing
+            // Boxing Unboxing 은 연산비용이 높기때문에 지양해야한다.
+
             GamePlayManager gamePlayerManger = new GamePlayManager();
 
             Console.WriteLine("Press any key to start the game ...");
