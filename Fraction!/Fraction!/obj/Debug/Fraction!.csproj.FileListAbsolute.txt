@@ -1,0 +1,7 @@
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\obj\Debug\Fraction!.csproj.AssemblyReference.cache
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\obj\Debug\Fraction!.csproj.CoreCompileInputs.cache
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\bin\Debug\Fraction!.exe.config
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\bin\Debug\Fraction!.exe
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\bin\Debug\Fraction!.pdb
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\obj\Debug\Fraction!.exe
+C:\Users\AA\Desktop\유니티 과제\Fraction!\Fraction!\obj\Debug\Fraction!.pdb
