@@ -16,22 +16,22 @@ namespace DelegateSample
         public string Nickname { get; private set; } ///유튜버 필드
 
         public delegate void OnContentUploadedHandler(Youtuber youtuber, Content content); //대리자 정의, 자료형 이름이 OnContent~Handler이다. //Subscriber 에 있는 Notification 함수랑 다를 게 없다. // 대리자 정의 (사용자정의자료형) //delegate
-        public event OnContentUploadedHandler OnContentUploaded // 대리자 타입 변수 //배열 형식인 듯
-        {
-            add //재정의 해서 사용 가능
-            {
-                Console.WriteLine("구독자 + 1");
-                _onContentIploaded += value;
-            }
-            remove
-            {
-                Console.WriteLine("구독자 - 1");
-                _onContentIploaded -= value;
-            }
-        }
         // event 한정자
         // 현재 타입 외에는 이 대리자에 접근할때 +=, -= 의 L-Value 로만 사용가능하도록 제한하는 한정자 //유튜버는 접근할 수 있다, 멤버 변수의 경우 event를 안 붙이는 경우가 거의 없다.
-        private OnContentUploadedHandler _onContentIploaded;
+        public event OnContentUploadedHandler OnContentUploaded; // 대리자 타입 변수 //배열 형식인 듯
+        //{
+        //    add //재정의 해서 사용 가능
+        //    {
+        //        Console.WriteLine("구독자 + 1");
+        //        _onContentIploaded += value;
+        //    }
+        //    remove
+        //    {
+        //        Console.WriteLine("구독자 - 1");
+        //        _onContentIploaded -= value;
+        //    }
+        //}
+        //private OnContentUploadedHandler _onContentIploaded;
 
         private Content[] _contents = new Content[100]; /// 유튜버당 콘텐츠 제한 100
         private int _count; /// 컨텐츠 갯수 카운트
@@ -47,7 +47,7 @@ namespace DelegateSample
 
         public void Subscribe(OnContentUploadedHandler onContentUploaded)
         {
-            OnContentUploaded = onContentUploaded;
+            OnContentUploaded += onContentUploaded;
         }
     }
 }
