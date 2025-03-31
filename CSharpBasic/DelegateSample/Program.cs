@@ -9,6 +9,7 @@
             // 대리자는 의존성을 감소 시켜서 유지보수하기 쉽게 만들어 준다.
             Youtuber youtuber1 = new Youtuber("NG"); /// 유튜버 생성
             // 인라인 함수 : 현재 라인에 함수구현 그대로 삽입, C# 에서는 인라인함수를 구현할때 람다식(익명함수) 로 구현함
+            // 인라인 함수의 장점 : 간단한 코드에 대해 가독성이 좋으며, 함수를 검색할 일이 없으므로 함수 오버헤드비용을 없앨수있다.
             youtuber1.Subscribe((youtuber, content) => Console.WriteLine($"--- System : {youtuber.Nickname} 이 {content.Title} 업로드함 ---")); //함수 이름으로 부를 필요가 없음
             youtuber1.OnContentUploaded += (youtuber, content) => Console.WriteLine($"--- System : {youtuber.Nickname} 이 {content.Title} 업로드함 ---");
 
