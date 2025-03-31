@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.DelegateSample", "Delega
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.FractionSample", "FractionSample\13.FractionSample.csproj", "{91B6C3D8-0617-4263-ACD8-0BF9ED5C9897}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.CollectionsSample", "CollectionsSample\14.CollectionsSample.csproj", "{59595C70-C1CD-4B8E-AC34-ADE38EC5CB51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{91B6C3D8-0617-4263-ACD8-0BF9ED5C9897}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91B6C3D8-0617-4263-ACD8-0BF9ED5C9897}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91B6C3D8-0617-4263-ACD8-0BF9ED5C9897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59595C70-C1CD-4B8E-AC34-ADE38EC5CB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59595C70-C1CD-4B8E-AC34-ADE38EC5CB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59595C70-C1CD-4B8E-AC34-ADE38EC5CB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59595C70-C1CD-4B8E-AC34-ADE38EC5CB51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
