@@ -38,11 +38,18 @@ namespace DelegateSample
 
         public void UploadContent(Content content) /// 컨텐츠 업로드
         {
+            OnContentUploadedHandler aa = new OnContentUploadedHandler((x, y) => Console.WriteLine()); //인라인 함수, 함수 검색 필요 X, 비용이 싸다
+
             if (_count >= _contents.Length) /// 컨텐츠 크기 배열보다 카운트가 클 시 예외
                 throw new Exception("컨텐츠 업로드 허용량을 초과하였습니다.");
 
             _contents[_count++] = content; /// 컨텐츠 배열에 컨텐츠 업로드 및 카운트 업
             OnContentUploaded(this, content); // 대리자에 구독된 모든 함수 호출 (구독한 순서대로)
+        }
+
+        void somethingTodo(Youtuber x, Content y)
+        {
+            Console.WriteLine();
         }
 
         public void Subscribe(OnContentUploadedHandler onContentUploaded)
