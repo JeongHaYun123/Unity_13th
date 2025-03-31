@@ -50,7 +50,7 @@ namespace FractionSample
 
             if (a < b)
             {
-                temp = a;
+                temp = b;
                 a = b;
                 b = temp;
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FractionSample
 {
-    class FractionCalculator : IPrintable
+    class FractionCalculator : IPrintable/*, IEnumerable<Fraction> //IEnumberable 따라가면 기반타입 멤버 숨김을 볼 수 있다.(파라미터 다른게 오버라이딩이고 나가는 값이 다른건 아니다)*/
     {
         public FractionCalculator(int capacity)
         {
@@ -98,6 +99,16 @@ namespace FractionSample
 
             Console.WriteLine($"Boxed {a} {(obj1 == obj2 ? "==" : "!=")} Boxed {b}");
             Console.WriteLine($"Boxed {a} {(obj1.Equals(obj2) ? "equals" : "not equals")} Boxed {b}");
+        }
+
+        public IEnumerator<Fraction> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
