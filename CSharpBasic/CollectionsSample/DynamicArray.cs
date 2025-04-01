@@ -1,16 +1,18 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CollectionsSample
 {
-    class DynamicArray
+    class DynamicArray : IEnumerable //반복 읽기가 가능한
     {
         public DynamicArray(int capactity) //capacity : 용량
         {
-            _data = new object[capactity];
+            _data = new object[capactity]; //보통은 4개부터 시작
         }
 
         public object this[int index]
@@ -156,5 +158,54 @@ namespace CollectionsSample
 
              }
          }*/
+
+        /// <summary>
+        /// Enumerator 를 반환하는 함수
+        /// 즉 IEnumerator 의 구현이 필요하다
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator GetEnumerator()
+        {
+           return new Enumerator(this);
+        }
+
+        struct Enumerator : IEnumerator //Dynamic 용 IEnumerator
+        {
+            public Enumerator(DynamicArray list)
+            {
+                _list = list;
+                _index = 0;
+                _current = default;
+            }
+
+
+            public object Current => _current;
+
+
+            DynamicArray _list; // 원본 데이터가 있는 객체 참조
+            int _index; // 현재 데이터를 가리키는 위치 인덱스
+            object _current; // 현재 데이터
+
+
+
+            public bool MoveNext()
+            {
+                if (_index < _list.Count)
+                {
+                    _current = _list[_index];
+                    _index++;
+                    return true;
+                }
+
+                _current = default;
+                return false;
+            }
+
+            public void Reset()
+            {
+                _index = 0;
+                _current = default;
+            }
+        }
     }
 }
