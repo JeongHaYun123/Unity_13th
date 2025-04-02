@@ -130,6 +130,95 @@ namespace CollectionsSample
             arrList.Add("Hi");
             arrList.Add(3.5f);
             arrList.Add('a');
+
+            //CountRoutineEnumerator countRoutineEnumerator = new CountRoutineEnumerator();
+            IEnumerator<int> countRoutineEnumerator = new CountRoutineEnumerator();
+
+            while (countRoutineEnumerator.MoveNext())
+            {
+                Console.WriteLine($"{countRoutineEnumerator.Current}");
+            }
+
+            IEnumerator<int> countRoutineEnumerator2 = CountRoutine();
+
+            while (countRoutineEnumerator2.MoveNext())
+            {
+                Console.WriteLine($"{countRoutineEnumerator2.Current}");
+            }
+
+            IEnumerator dummyEnumerator = DummyRoutinable().GetEnumerator();
+
+            while (dummyEnumerator.MoveNext())
+            {
+                Console.WriteLine($"{dummyEnumerator.Current}");
+            }
+
+            foreach(object item in DummyRoutinable())
+            {
+                
+            }
+        }
+
+        static IEnumerator BaristaRoutin()
+        {
+            // TODO -> 주문 들어올때까지 기다리는 로직
+            yield return null;
+            // TODO -> 주문들어온거 제조하고 제조 될때까지 기다리는 로직
+            yield return null;
+        }
+
+        static IEnumerator<int> CountRoutine()
+        {
+            yield return 1; // yield 키워드 : IEnumerable 혹은 IEnumerator 의 MoveNext 구현을 작성할때 사용
+            Random random = new Random();
+            int number = random.Next(0, 5);
+            yield return number;
+            //yield return 2;
+            yield return 3;
+            //yield break;
+        }
+
+        static IEnumerable DummyRoutinable()
+        {
+            yield return "Luke"; // yield 키워드 : IEnumerable 혹은 IEnumerator 의 MoveNext 구현을[삭제 : 및 Current 에 값을 리턴하는 내용을] 작성할때 사용
+            yield return 3.5f;
+            yield return 'A';
+            //yield break;
+        }
+
+        class CountRoutineEnumerator : IEnumerator<int>
+        {
+            public int Current => _current;
+
+            object IEnumerator.Current => Current;
+            int _index;
+            int _current;
+
+            public bool MoveNext()
+            {
+                if (_index == 0)
+                    _current = 1;
+                else if (_index == 1)
+                    _current = 2;
+                else if (_index == 2)
+                    _current = 3;
+                else
+                    return false;
+
+                _index++;
+                return true;
+            }
+
+            public void Reset()
+            {
+                _index = 0;
+                _current = default(int);
+            }
+
+            public void Dispose()
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
