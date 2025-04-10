@@ -157,6 +157,25 @@ namespace CollectionsSample
             {
                 
             }
+
+            //Stack
+            //----------------------------------------------------------------------
+
+            MyStack<int> myStack = new MyStack<int>(5);
+            myStack.Push(1);
+            myStack.Push(4);
+            myStack.Push(1);
+            myStack.Pop();
+            myStack.Push(5);
+            Console.WriteLine(myStack.Peek());
+
+            Stack<int> stack = new Stack<int>(6);
+            stack.Push(1);
+            stack.Push(4);
+            stack.Push(1);
+            stack.Pop();
+            Console.WriteLine(stack.Peek());
+
         }
 
         static IEnumerator BaristaRoutin()
