@@ -134,8 +134,12 @@
 
         public bool IsValid(Coord coord)
         {
-            if(IsEmpty(coord.X, coord.Y)) { return true; }
-            
+            if (coord.X >= 0 && coord.X < _tiles.GetLength(1) &&
+                 coord.Y >= 0 && coord.Y < _tiles.GetLength(0))
+            {
+                return true;
+            }
+
             return false;
         }
 

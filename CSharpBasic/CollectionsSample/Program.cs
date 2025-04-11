@@ -176,6 +176,32 @@ namespace CollectionsSample
             stack.Pop();
             Console.WriteLine(stack.Peek());
 
+            // Queue
+            //-----------------------------------------------------------------
+
+            MyQueue<string> myQueue = new MyQueue<string>(3);
+            myQueue.Enqueue("Luke");
+            myQueue.Enqueue("Carl");
+            myQueue.Enqueue("David");
+            myQueue.Enqueue("Ben");
+            myQueue.Dequeue();
+            myQueue.Enqueue("Tobi");
+            myQueue.Dequeue();
+            myQueue.Enqueue("Shun");
+            myQueue.Enqueue("Tom");
+
+            Console.WriteLine("대기열 : ");
+            while (myQueue.Count > 0)
+            {
+                Console.Write($"{myQueue.Dequeue()}, ");
+            }
+
+            Queue<string> queue = new Queue<string>(4);
+            queue.Enqueue("HI");
+            queue.Enqueue("Bye");
+            queue.Dequeue();
+            queue.Peek();
+
         }
 
         static IEnumerator BaristaRoutin()
