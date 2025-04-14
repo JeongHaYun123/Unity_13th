@@ -202,6 +202,27 @@ namespace CollectionsSample
             queue.Dequeue();
             queue.Peek();
 
+            // LinkedList
+            //-------------------------------------------------------------------
+
+            MyLinkedList<int> myLinkedList = new MyLinkedList<int>();
+            myLinkedList.AddLast(1);
+            myLinkedList.AddFirst(2);
+            MyLinkedListNode<int> myLinkedListNode = myLinkedList.FindLast(x => x > 0);
+
+            myLinkedList.AddAfter(myLinkedListNode, 4); // 2, 1, 4
+
+            LinkedList<int> linkedList = new LinkedList<int>();
+            linkedList.AddFirst(1);
+
+            foreach (var value in myLinkedList)
+            {
+            }
+
+            foreach (int item in linkedList)
+            {
+            }
+
         }
 
         static IEnumerator BaristaRoutin()
