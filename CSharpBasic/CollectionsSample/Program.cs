@@ -223,6 +223,67 @@ namespace CollectionsSample
             {
             }
 
+            // Trie
+            // -----------------------------------------------------------------------
+
+            Trie trie = new Trie();
+
+            List<string> inputWords = new List<string>()
+            {
+                "apple", "App", "application", "apex", "apt",
+                "banana", "band", "bandage", "bandit", "ban",
+                "cat", "cater", "caterpillar", "cattle",
+                "dog", "dodge",
+                "elephant", "elegant", "element", "elevator",
+                "zebra", "zephyr", "zealous", "zeppelin",
+                "xylophone", "xenon",
+                "quantum", "quarrel", "queen"
+            };
+
+            foreach (string word in inputWords)
+            {
+                trie.Add(word);
+            }
+
+            string inputText = string.Empty;
+
+            Console.Clear();
+
+            while (true)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+                Console.Clear();
+                ConsoleKey Key = keyInfo.Key;
+
+                if (Key == ConsoleKey.Backspace)
+                {
+                    if (inputText.Length > 0)
+                        inputText = inputText.Substring(0, inputText.Length - 1);
+                }
+                else if ((char)Key >= 'A' && (char)Key <= 'Z')
+                {
+                    inputText += (char)Key;
+                }
+                else
+                {
+                    Console.WriteLine("알파벳만 입력 가능합니다.");
+                }
+
+
+
+                //char c = Convert.ToChar(input); //단어 아스키 코드를 캐릭터 타입으로 변경해서 사용
+                //inputText += c;
+                Console.WriteLine($"검색 : {inputText}");
+
+                List<string> startsWith = trie.StartsWith(inputText);
+
+                foreach (string word in startsWith)
+                {
+                    Console.WriteLine(word);
+                }
+
+                Console.SetCursorPosition(7 + inputText.Length, 0);
+            }
         }
 
         static IEnumerator BaristaRoutin()
