@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Text;
+using System.Xml.Schema;
 
 namespace CollectionsSample
 {
@@ -245,7 +247,8 @@ namespace CollectionsSample
                 trie.Add(word);
             }
 
-            string inputText = string.Empty;
+            StringBuilder inputBuilder = new StringBuilder(20);
+            //string inputText = string.Empty;
 
             Console.Clear();
 
@@ -253,16 +256,20 @@ namespace CollectionsSample
             {
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
                 Console.Clear();
-                ConsoleKey Key = keyInfo.Key;
+                ConsoleKey key = keyInfo.Key;
 
-                if (Key == ConsoleKey.Backspace)
+                if (key == ConsoleKey.Backspace)
                 {
-                    if (inputText.Length > 0)
-                        inputText = inputText.Substring(0, inputText.Length - 1);
+                    /*if (inputText.Length > 0)
+                        inputText = inputText.Substring(0, inputText.Length - 1);*/
+                    if (inputBuilder.Length > 0)
+                        inputBuilder.Remove(inputBuilder.Length - 1, 1); //새로운 인스턴스 할당되고 가비지 컬렉션 없어지는 게 없어진다.
+                        //inputBuilder.Length -= 1;
                 }
-                else if ((char)Key >= 'A' && (char)Key <= 'Z')
+                else if ((char)key >= 'A' && (char)key <= 'Z')
                 {
-                    inputText += (char)Key;
+                    inputBuilder.Append(char.ToLower((char)key));
+                    //inputText += (char)Key;
                 }
                 else
                 {
@@ -273,17 +280,30 @@ namespace CollectionsSample
 
                 //char c = Convert.ToChar(input); //단어 아스키 코드를 캐릭터 타입으로 변경해서 사용
                 //inputText += c;
-                Console.WriteLine($"검색 : {inputText}");
+                string input = inputBuilder.ToString();
+                Console.WriteLine($"검색 : {input}");
 
-                List<string> startsWith = trie.StartsWith(inputText);
+                List<string> startsWith = trie.StartsWith(input);
 
                 foreach (string word in startsWith)
                 {
                     Console.WriteLine(word);
                 }
 
-                Console.SetCursorPosition(7 + inputText.Length, 0);
+                Console.SetCursorPosition(7 + input.Length, 0);
             }
+
+            // Dictionary (Gener ic Hashtable)
+            //----------------------------------------------------------------------
+            //원하는 키로 밸류 검색
+            Dictionary<string, int> scores = new Dictionary<string, int>();
+            scores.Add("Luke", 50);
+            scores.Add("Carl", 70);
+            scores["Jason"] = 40;
+
+            int scoreOfLuke = scores["Luke"];
+            scores.Remove("Lule");
+
         }
 
         static IEnumerator BaristaRoutin()

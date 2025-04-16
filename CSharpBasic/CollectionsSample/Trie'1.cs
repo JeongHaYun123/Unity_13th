@@ -35,7 +35,7 @@ namespace CollectionsSample
         {
             get
             {
-                return _children[alphabet - 'a'];
+                return _children[alphabet - 'a']; //범위 맞추기?
             }
 
             set
@@ -53,7 +53,7 @@ namespace CollectionsSample
             }
         }
 
-        public bool HasChild => Count == 0;
+        public bool HasChild => Count == 0; //자식 확인 , 뒤에 자식 있으면 마킹만 지운다.
         
         const int ALPHABET_TOTAL = 26;
 
@@ -134,7 +134,7 @@ namespace CollectionsSample
         private void FindAllWords(TrieNode node, string buildingWord, List<string> appendList)
         {
             if (node.IsWord)
-                appendList.Add(buildingWord);
+                appendList.Add(buildingWord); //맞주치는 워드 쌓기
 
 
             for (char c = 'a'; c <= 'z'; c++)
