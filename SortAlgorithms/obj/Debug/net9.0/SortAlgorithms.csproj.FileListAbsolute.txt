@@ -1,0 +1,14 @@
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\bin\Debug\net9.0\SortAlgorithms.exe
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\bin\Debug\net9.0\SortAlgorithms.deps.json
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\bin\Debug\net9.0\SortAlgorithms.runtimeconfig.json
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\bin\Debug\net9.0\SortAlgorithms.dll
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\bin\Debug\net9.0\SortAlgorithms.pdb
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.AssemblyInfoInputs.cache
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.AssemblyInfo.cs
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.dll
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\refint\SortAlgorithms.dll
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.pdb
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\SortAlgorithms.genruntimeconfig.cache
+C:\Users\AA\Desktop\유니티 과제\Unity_13th-main\CSharpBasic\SortAlgorithms\obj\Debug\net9.0\ref\SortAlgorithms.dll
